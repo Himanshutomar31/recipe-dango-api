@@ -8,8 +8,8 @@ jobs:
     name: Test and Lint
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v1
       - name: Login to Docker Hub
-        uses: actions/checkout@v1
         run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
 
       - name: Checkout
